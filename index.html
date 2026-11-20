@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo Life Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="dashboard-header">
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-pressed="false">🌙 Dark</button>
+  </header>
+
+  <main class="dashboard-main">
+
+    <!-- Greeting Component -->
+    <section id="greeting" class="card greeting-card" aria-label="Greeting">
+      <div class="greeting-row">
+        <span data-greeting class="greeting-text"></span>
+        <span data-username class="username-text"></span>
+        <button type="button" data-edit-name class="edit-name-btn" aria-label="Edit name" title="Edit name">✏️</button>
+      </div>
+      <span data-time class="time-text"></span>
+      <span data-date class="date-text"></span>
+    </section>
+
+    <!-- Name Input Modal -->
+    <div id="name-modal" class="name-modal" role="dialog" aria-modal="true" aria-labelledby="name-modal-title" hidden>
+      <div class="name-modal__backdrop"></div>
+      <div class="name-modal__box">
+        <h2 id="name-modal-title" class="name-modal__title">What&#39;s your name?</h2>
+        <p class="name-modal__desc">I&#39;ll use it to greet you every time you open the dashboard.</p>
+        <form id="name-modal-form" class="name-modal__form">
+          <input
+            id="name-modal-input"
+            type="text"
+            placeholder="Enter your name…"
+            maxlength="40"
+            autocomplete="given-name"
+            aria-label="Your name"
+          />
+          <button type="submit" class="name-modal__submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Focus Timer -->
+    <section id="timer" class="card timer-card" aria-label="Focus Timer">
+      <h2 class="card-title">Focus Timer</h2>
+      <span data-display class="timer-display">25:00</span>
+      <span data-timer-status class="timer-status" hidden></span>
+      <div class="timer-controls">
+        <button type="button" data-action="start">Start</button>
+        <button type="button" data-action="stop">Stop</button>
+        <button type="button" data-action="reset">Reset</button>
+      </div>
+    </section>
+
+    <!-- To-Do List -->
+    <section id="todo" class="card todo-card" aria-label="To-Do List">
+      <h2 class="card-title">To-Do</h2>
+      <form data-todo-form class="todo-form">
+        <input
+          data-todo-input
+          type="text"
+          placeholder="Add a task..."
+          aria-label="New task text"
+          autocomplete="off"
+        />
+        <button type="submit">Add</button>
+      </form>
+      <span data-todo-notice class="todo-notice" role="alert" hidden></span>
+      <ul data-todo-list class="todo-list"></ul>
+    </section>
+
+    <!-- Quick Links -->
+    <section id="links" class="card links-card" aria-label="Quick Links">
+      <h2 class="card-title">Quick Links</h2>
+      <form data-links-form class="links-form">
+        <input
+          data-links-name
+          type="text"
+          placeholder="Name"
+          aria-label="Link name"
+          autocomplete="off"
+        />
+        <input
+          data-links-url
+          type="url"
+          placeholder="https://..."
+          aria-label="Link URL"
+          autocomplete="off"
+        />
+        <button type="submit">Add Link</button>
+      </form>
+      <div data-links-container class="links-container"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Todo Life Dashboard",
+  "version": "1.0.0",
+  "description": "A Todo Life Dashboard with a greeting clock, 25-minute focus timer, to-do list, quick links, and theme toggle.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Todo Life Dashboard"
+  }
+}
